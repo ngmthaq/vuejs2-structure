@@ -1,10 +1,7 @@
 <template>
   <v-app>
-    <v-app-bar
-      app
-      color="primary"
-      dark
-    >
+    <primary-loading />
+    <v-app-bar app color="primary" dark>
       <div class="d-flex align-center">
         <v-img
           alt="Vuetify Logo"
@@ -38,18 +35,25 @@
     </v-app-bar>
 
     <v-main>
-      <router-view/>
+      <router-view />
     </v-main>
   </v-app>
 </template>
 
 <script>
+import { PrimaryLoading } from "@/components/common";
 
 export default {
-  name: 'App',
+  name: "App",
+
+  components: {
+    "primary-loading": PrimaryLoading,
+  },
 
   data: () => ({
     //
   }),
 };
 </script>
+
+<style lang="scss"></style>

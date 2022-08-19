@@ -1,4 +1,7 @@
 import axios from "axios";
+import store from "@/store";
+import { getStoreNS } from "@/utils";
+import { commonName, commonMutatorTypes } from "@/store/modules/common.store";
 
 class ConfigApi {
   constructor() {
@@ -120,6 +123,94 @@ class ConfigApi {
 
       return result;
     } catch (e) {
+      return e;
+    }
+  }
+
+  async getWithLoading(url, params = {}, headers = {}) {
+    try {
+      store.dispatch(getStoreNS(commonName, commonMutatorTypes.SET), {
+        isLoading: true,
+      });
+
+      let result = await this._get(url, params, headers);
+
+      store.dispatch(getStoreNS(commonName, commonMutatorTypes.SET), {
+        isLoading: false,
+      });
+
+      return result;
+    } catch (e) {
+      store.dispatch(getStoreNS(commonName, commonMutatorTypes.SET), {
+        isLoading: false,
+      });
+
+      return e;
+    }
+  }
+
+  async postWithLoading(url, data = {}, headers = {}) {
+    try {
+      store.dispatch(getStoreNS(commonName, commonMutatorTypes.SET), {
+        isLoading: true,
+      });
+
+      let result = await this._post(url, data, headers);
+
+      store.dispatch(getStoreNS(commonName, commonMutatorTypes.SET), {
+        isLoading: false,
+      });
+
+      return result;
+    } catch (e) {
+      store.dispatch(getStoreNS(commonName, commonMutatorTypes.SET), {
+        isLoading: false,
+      });
+
+      return e;
+    }
+  }
+
+  async putWithLoading(url, data = {}, headers = {}) {
+    try {
+      store.dispatch(getStoreNS(commonName, commonMutatorTypes.SET), {
+        isLoading: true,
+      });
+
+      let result = await this._put(url, data, headers);
+
+      store.dispatch(getStoreNS(commonName, commonMutatorTypes.SET), {
+        isLoading: false,
+      });
+
+      return result;
+    } catch (e) {
+      store.dispatch(getStoreNS(commonName, commonMutatorTypes.SET), {
+        isLoading: false,
+      });
+
+      return e;
+    }
+  }
+
+  async deleteWithLoading(url, data = {}, headers = {}) {
+    try {
+      store.dispatch(getStoreNS(commonName, commonMutatorTypes.SET), {
+        isLoading: true,
+      });
+
+      let result = await this._delete(url, data, headers);
+
+      store.dispatch(getStoreNS(commonName, commonMutatorTypes.SET), {
+        isLoading: false,
+      });
+
+      return result;
+    } catch (e) {
+      store.dispatch(getStoreNS(commonName, commonMutatorTypes.SET), {
+        isLoading: false,
+      });
+
       return e;
     }
   }
