@@ -1,7 +1,7 @@
 import axios from "axios";
 import store from "@/store";
 import { getStoreNS } from "@/utils";
-import { commonName, commonMutatorTypes } from "@/store/modules/common.store";
+import commonModule from "@/store/modules/common.store";
 
 class ConfigApi {
   constructor() {
@@ -129,21 +129,30 @@ class ConfigApi {
 
   async getWithLoading(url, params = {}, headers = {}) {
     try {
-      store.dispatch(getStoreNS(commonName, commonMutatorTypes.SET), {
-        isLoading: true,
-      });
+      store.dispatch(
+        getStoreNS(commonModule.name, commonModule.mutationTypes.SET),
+        {
+          isLoading: true,
+        }
+      );
 
       let result = await this._get(url, params, headers);
 
-      store.dispatch(getStoreNS(commonName, commonMutatorTypes.SET), {
-        isLoading: false,
-      });
+      store.dispatch(
+        getStoreNS(commonModule.name, commonModule.mutationTypes.SET),
+        {
+          isLoading: false,
+        }
+      );
 
       return result;
     } catch (e) {
-      store.dispatch(getStoreNS(commonName, commonMutatorTypes.SET), {
-        isLoading: false,
-      });
+      store.dispatch(
+        getStoreNS(commonModule.name, commonModule.mutationTypes.SET),
+        {
+          isLoading: false,
+        }
+      );
 
       return e;
     }
@@ -151,21 +160,30 @@ class ConfigApi {
 
   async postWithLoading(url, data = {}, headers = {}) {
     try {
-      store.dispatch(getStoreNS(commonName, commonMutatorTypes.SET), {
-        isLoading: true,
-      });
+      store.dispatch(
+        getStoreNS(commonModule.name, commonModule.mutationTypes.SET),
+        {
+          isLoading: true,
+        }
+      );
 
       let result = await this._post(url, data, headers);
 
-      store.dispatch(getStoreNS(commonName, commonMutatorTypes.SET), {
-        isLoading: false,
-      });
+      store.dispatch(
+        getStoreNS(commonModule.name, commonModule.mutationTypes.SET),
+        {
+          isLoading: false,
+        }
+      );
 
       return result;
     } catch (e) {
-      store.dispatch(getStoreNS(commonName, commonMutatorTypes.SET), {
-        isLoading: false,
-      });
+      store.dispatch(
+        getStoreNS(commonModule.name, commonModule.mutationTypes.SET),
+        {
+          isLoading: false,
+        }
+      );
 
       return e;
     }
@@ -173,21 +191,30 @@ class ConfigApi {
 
   async putWithLoading(url, data = {}, headers = {}) {
     try {
-      store.dispatch(getStoreNS(commonName, commonMutatorTypes.SET), {
-        isLoading: true,
-      });
+      store.dispatch(
+        getStoreNS(commonModule.name, commonModule.mutationTypes.SET),
+        {
+          isLoading: true,
+        }
+      );
 
       let result = await this._put(url, data, headers);
 
-      store.dispatch(getStoreNS(commonName, commonMutatorTypes.SET), {
-        isLoading: false,
-      });
+      store.dispatch(
+        getStoreNS(commonModule.name, commonModule.mutationTypes.SET),
+        {
+          isLoading: false,
+        }
+      );
 
       return result;
     } catch (e) {
-      store.dispatch(getStoreNS(commonName, commonMutatorTypes.SET), {
-        isLoading: false,
-      });
+      store.dispatch(
+        getStoreNS(commonModule.name, commonModule.mutationTypes.SET),
+        {
+          isLoading: false,
+        }
+      );
 
       return e;
     }
@@ -195,21 +222,30 @@ class ConfigApi {
 
   async deleteWithLoading(url, data = {}, headers = {}) {
     try {
-      store.dispatch(getStoreNS(commonName, commonMutatorTypes.SET), {
-        isLoading: true,
-      });
+      store.dispatch(
+        getStoreNS(commonModule.name, commonModule.mutationTypes.SET),
+        {
+          isLoading: true,
+        }
+      );
 
       let result = await this._delete(url, data, headers);
 
-      store.dispatch(getStoreNS(commonName, commonMutatorTypes.SET), {
-        isLoading: false,
-      });
+      store.dispatch(
+        getStoreNS(commonModule.name, commonModule.mutationTypes.SET),
+        {
+          isLoading: false,
+        }
+      );
 
       return result;
     } catch (e) {
-      store.dispatch(getStoreNS(commonName, commonMutatorTypes.SET), {
-        isLoading: false,
-      });
+      store.dispatch(
+        getStoreNS(commonModule.name, commonModule.mutationTypes.SET),
+        {
+          isLoading: false,
+        }
+      );
 
       return e;
     }

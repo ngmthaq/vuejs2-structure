@@ -1,13 +1,15 @@
-const commonName = "common";
+const name = "common";
 
-const commonMutatorTypes = {
+const mutationTypes = {
   SET: "SET",
   RESET: "RESET",
 };
 
-const commonActionTypes = {
+const actionTypes = {
   onRaiseError: "onRaiseError",
 };
+
+const getterTypes = {};
 
 const state = () => ({
   error: null,
@@ -16,11 +18,11 @@ const state = () => ({
 });
 
 const mutations = {
-  [commonMutatorTypes.SET](state, payload = {}) {
+  [mutationTypes.SET](state, payload = {}) {
     state = Object.assign(state, payload);
   },
 
-  [commonMutatorTypes.RESET](state) {
+  [mutationTypes.RESET](state) {
     state = Object.assign(state, {
       error: null,
       isLoading: false,
@@ -30,7 +32,7 @@ const mutations = {
 };
 
 const actions = {
-  async [commonActionTypes.onRaiseError](context, payload) {},
+  async [actionTypes.onRaiseError](context, payload) {},
 };
 
 const getters = {};
@@ -40,6 +42,8 @@ export default {
   mutations,
   actions,
   getters,
+  mutationTypes,
+  actionTypes,
+  getterTypes,
+  name,
 };
-
-export { commonName, commonMutatorTypes, commonActionTypes };
