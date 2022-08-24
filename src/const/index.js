@@ -5,7 +5,6 @@ import * as PathConstant from "./path.const";
 import * as SystemConstant from "./system.const";
 import * as FormatConstant from "./format.const";
 import * as LangConstant from "./lang.const";
-import ImageConstant from "@/assets/images";
 
 export {
   AppConstant,
@@ -14,6 +13,5 @@ export {
   PathConstant,
   SystemConstant,
   FormatConstant,
-  ImageConstant,
   LangConstant,
 };

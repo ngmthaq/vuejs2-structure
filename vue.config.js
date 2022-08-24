@@ -6,7 +6,6 @@ module.exports = defineConfig({
         additionalData: `
           @import "~@/assets/styles/_variable.scss";
           @import "~@/assets/styles/_mixins.scss";
-          @import "~@/assets/styles/index.scss";
         `,
       },
     },

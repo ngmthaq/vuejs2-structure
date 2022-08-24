@@ -11,14 +11,12 @@
 import { PrimaryLoading } from "@/components/common";
 
 export default {
-  name: "App",
-
   components: {
     "primary-loading": PrimaryLoading,
   },
-
-  created() {},
 };
 </script>
 
-<style lang="scss"></style>
+<style lang="scss">
+@import "@/assets/styles/index.scss";
+</style>
