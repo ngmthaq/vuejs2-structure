@@ -1,6 +1,6 @@
 <template>
   <v-app>
-    <primary-loading />
+    <primary-loading :show="isLoading" />
     <v-main>
       <router-view />
     </v-main>
@@ -9,11 +9,17 @@
 
 <script>
 import { PrimaryLoading } from "@/components/common";
+import commonModule from "@/store/modules/common.store";
+import { mapModuleStore } from "@/utils";
+
+const store = mapModuleStore(commonModule);
 
 export default {
   components: {
     "primary-loading": PrimaryLoading,
   },
+
+  mixins: [store],
 };
 </script>
 

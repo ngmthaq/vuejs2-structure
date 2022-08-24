@@ -1,11 +1,13 @@
-const authName = "auth";
+const name = "auth";
 
-const authMutatorTypes = {
+const mutationTypes = {
   SET: "SET",
   RESET: "RESET",
 };
 
-const authActionTypes = {};
+const actionTypes = {};
+
+const getterTypes = {};
 
 const state = () => ({
   accessToken: null,
@@ -14,11 +16,11 @@ const state = () => ({
 });
 
 const mutations = {
-  [authMutatorTypes.SET](state, payload = {}) {
+  [mutationTypes.SET](state, payload = {}) {
     state = Object.assign(state, payload);
   },
 
-  [authMutatorTypes.RESET](state) {
+  [mutationTypes.RESET](state) {
     state = Object.assign(state, {
       error: null,
       isLoading: false,
@@ -36,6 +38,8 @@ export default {
   mutations,
   actions,
   getters,
+  mutationTypes,
+  actionTypes,
+  getterTypes,
+  name,
 };
-
-export { authName, authMutatorTypes, authActionTypes };

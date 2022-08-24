@@ -2,14 +2,13 @@ const context = require.context(".", false, /.store.js/);
 const modules = {};
 
 context.keys().forEach((file) => {
-  // create the module name from file
-  const moduleName = file.replace(/(\.\/|\.store\.js$)/g, "");
+  const defaultContext = context(file).default;
 
   // register file context under module name
-  modules[moduleName] = context(file).default;
+  modules[defaultContext.name] = defaultContext;
 
   // override namespaced option
-  modules[moduleName]["namespaced"] = true;
+  modules[defaultContext.name]["namespaced"] = true;
 });
 
 export default modules;
