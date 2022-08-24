@@ -1,6 +1,6 @@
 <template>
-  <div class="primary-loading">
-    <v-progress-linear indeterminate color="cyan" v-show="show" />
+  <div class="primary-loading" v-show="show">
+    <v-progress-linear indeterminate color="cyan" />
   </div>
 </template>
 
@@ -9,7 +9,7 @@ export default {
   props: {
     show: {
       type: Boolean,
-      default: true,
+      default: false,
     },
   },
 };

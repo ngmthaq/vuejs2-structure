@@ -1,0 +1,15 @@
+.us-none {
+    user-select: none !important;
+}
+
+.hidden {
+    display: none !important;
+}
+
+.ellipsis {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+}
