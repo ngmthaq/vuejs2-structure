@@ -10,4 +10,15 @@ module.exports = defineConfig({
       enableBridge: false,
     },
   },
+  css: {
+    loaderOptions: {
+      scss: {
+        additionalData: `
+          @import "~@/assets/scss/_variables.scss";
+          @import "~@/assets/scss/_mixins.scss";
+          @import "~@/assets/scss/style.scss";
+        `,
+      },
+    },
+  },
 });

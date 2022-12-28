@@ -11,4 +11,12 @@ export default {
 };
 </script>
 
-<style></style>
+<style lang="scss" scoped>
+p {
+  color: $red;
+
+  @include downXl {
+    color: $blue;
+  }
+}
+</style>
