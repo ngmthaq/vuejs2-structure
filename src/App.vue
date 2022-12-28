@@ -10,8 +10,14 @@
 export default {
   name: "App",
 
-  data: () => ({}),
+  data() {
+    return {};
+  },
 
-  created() {},
+  created() {
+    console.log(this.$store.state.common.isLoading);
+  },
+
+  mounted() {},
 };
 </script>
