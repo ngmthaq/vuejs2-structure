@@ -9,9 +9,9 @@ import { appConst, apiConst, keyConst, pathConst } from "./const";
 import filters from "./filters";
 import App from "./App.vue";
 import MainLayout from "./layouts/MainLayout.vue";
-import "./registerServiceWorker";
 import "bootstrap/dist/css/bootstrap.css";
 import "bootstrap-vue/dist/bootstrap-vue.css";
+import "./registerServiceWorker";
 
 // Vue configs
 Vue.config.productionTip = false;
