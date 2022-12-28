@@ -1,36 +1,43 @@
 import Vue from "vue";
-import router from "@/router";
-import store from "@/store";
-import bus from "@/bus";
-import globalMixins from "@/mixins";
-import { vuetify } from "@/plugins";
-import * as filters from "@/filters";
+import router from "./router";
+import store from "./store";
+import eventBus from "./bus";
+import { vuetify } from "./plugins";
+import { appConst, apiConst, keyConst, pathConst } from "./const";
+import filters from "./filters";
 import App from "./App.vue";
+import MainLayout from "./layouts/MainLayout.vue";
 import "./registerServiceWorker";
 
-// Config
+// Vue configs
 Vue.config.productionTip = false;
 
-// Prototype
-Vue.prototype.$bus = bus;
+// Event bus
+Vue.prototype.$eventBus = eventBus;
+
+// Config constants
+Vue.prototype.$appConst = appConst;
+Vue.prototype.$apiConst = apiConst;
+Vue.prototype.$keyConst = keyConst;
+Vue.prototype.$pathConst = pathConst;
+
+// Config filters
+Object.values(filters).forEach(filter => {
+  Object.entries(filter).forEach(([name, func]) => {
+    Vue.filter(name, func);
+  });
+});
 
 // Global components
-// Vue.component("global-component", GlobalComponent)
-
-// Global mixins
-Vue.mixin(globalMixins);
-
-// Global filters
-Object.entries(filters).forEach(([filterName, filterFunc]) => {
-  Vue.filter(filterName, filterFunc);
-});
+Vue.component("main-layout", MainLayout);
 
 const app = new Vue({
-  router,
-  store,
-  vuetify,
-  render: (h) => h(App),
+  router: router,
+  store: store,
+  vuetify: vuetify,
+  render: function (h) {
+    return h(App);
+  },
 });
 
-// Initial
 app.$mount("#app");

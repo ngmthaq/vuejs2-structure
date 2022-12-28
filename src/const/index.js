@@ -1,17 +1,6 @@
-import * as AppConstant from "./app.const";
-import * as ApiConstant from "./api.const";
-import * as KeyConstant from "./key.const";
-import * as PathConstant from "./path.const";
-import * as SystemConstant from "./system.const";
-import * as FormatConstant from "./format.const";
-import * as LangConstant from "./lang.const";
+import appConst from "./app.const";
+import apiConst from "./api.const";
+import keyConst from "./key.const";
+import pathConst from "./path.const";
 
-export {
-  AppConstant,
-  ApiConstant,
-  KeyConstant,
-  PathConstant,
-  SystemConstant,
-  FormatConstant,
-  LangConstant,
-};
+export { appConst, apiConst, keyConst, pathConst };

@@ -1,6 +1,5 @@
-export const capitalize = (value) => {
-  if (!value) return "";
-  value = value.toString();
+import * as currencyFilter from "./currency.filter";
+import * as datetimeFilter from "./datetime.filter";
+import * as strFilter from "./str.filter";
 
-  return value.charAt(0).toUpperCase() + value.slice(1);
-};
+export default { currencyFilter, datetimeFilter, strFilter };

@@ -1,20 +1,10 @@
-import Vue from "vue";
+import Vue, { nextTick } from "vue";
 import VueRouter from "vue-router";
-import { Welcome } from "@/views";
-import { PathConstant } from "@/const";
+import { pathConst } from "@/const";
 
 Vue.use(VueRouter);
 
-const routes = [
-  {
-    path: PathConstant.ROOT.path,
-    name: PathConstant.ROOT.name,
-    component: Welcome,
-    meta: {
-      title: "Welcome to Vuejs 2",
-    },
-  },
-];
+const routes = Object.values(pathConst);
 
 const router = new VueRouter({
   mode: "history",
@@ -22,10 +12,12 @@ const router = new VueRouter({
   routes,
 });
 
-router.afterEach((to, from) => {
-  Vue.nextTick(() => {
-    document.title = to.meta.title;
+router.afterEach(to => {
+  nextTick(() => {
+    document.title = to.meta.title || DEFAULT_TITLE;
   });
 });
 
 export default router;
+
+const DEFAULT_TITLE = "Vuejs";
