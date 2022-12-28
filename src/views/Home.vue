@@ -1,7 +1,9 @@
 <template>
   <div>
     <p>{{ $t("message") }}</p>
-    <b-icon-alarm></b-icon-alarm>
+    <b-button class="button">
+      <b-icon-alarm></b-icon-alarm>
+    </b-button>
   </div>
 </template>
 
@@ -18,5 +20,9 @@ p {
   @include downXl {
     color: $blue;
   }
+}
+
+button {
+  background-color: $danger;
 }
 </style>
