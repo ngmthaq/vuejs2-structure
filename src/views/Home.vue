@@ -1,5 +1,8 @@
 <template>
-  <p>{{ $t("message") }}</p>
+  <div>
+    <p>{{ $t("message") }}</p>
+    <b-icon-alarm></b-icon-alarm>
+  </div>
 </template>
 
 <script>
