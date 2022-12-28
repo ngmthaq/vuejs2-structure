@@ -1,3 +1,4 @@
+// Color
 $blue: #007bff;
 $indigo: #6610f2;
 $purple: #6f42c1;
@@ -19,8 +20,13 @@ $warning: #ffc107;
 $danger: #dc3545;
 $light: #f8f9fa;
 $dark: #343a40;
+
+// Breakpoint
 $breakpoint-xs: 0;
 $breakpoint-sm: 576px;
 $breakpoint-md: 768px;
 $breakpoint-lg: 992px;
 $breakpoint-xl: 1200px;
+
+// z-index
+$z-index-loading: 10000;
