@@ -1,5 +1,5 @@
 <template>
-  <p>Home</p>
+  <p>{{ $t("message") }}</p>
 </template>
 
 <script>

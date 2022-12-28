@@ -1,6 +1,7 @@
 import Vue from "vue";
 import router from "./router";
 import store from "./store";
+import i18n from "./i18n";
 import eventBus from "./bus";
 import { vuetify } from "./plugins";
 import { appConst, apiConst, keyConst, pathConst } from "./const";
@@ -35,6 +36,8 @@ const app = new Vue({
   router: router,
   store: store,
   vuetify: vuetify,
+  i18n: i18n,
+
   render: function (h) {
     return h(App);
   },
