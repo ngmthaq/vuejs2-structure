@@ -10,13 +10,11 @@ import filters from "./filters";
 import App from "./App.vue";
 import MainLayout from "./layouts/MainLayout.vue";
 import "./registerServiceWorker";
+import "bootstrap/dist/css/bootstrap.css";
+import "bootstrap-vue/dist/bootstrap-vue.css";
 
 // Vue configs
 Vue.config.productionTip = false;
-
-// Import Bootstrap and BootstrapVue CSS files (order is important)
-import "bootstrap/dist/css/bootstrap.css";
-import "bootstrap-vue/dist/bootstrap-vue.css";
 
 // Make BootstrapVue available throughout your project
 Vue.use(BootstrapVue);
