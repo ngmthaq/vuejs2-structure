@@ -1,6 +1,4 @@
 const commonModule = {
-  namespaced: true,
-
   state: () => ({
     isLoading: false,
   }),
